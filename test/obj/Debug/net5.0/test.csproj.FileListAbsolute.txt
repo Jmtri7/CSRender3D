@@ -14,3 +14,11 @@ C:\Users\Mimsy\Desktop\test\obj\Debug\net5.0\test.dll
 C:\Users\Mimsy\Desktop\test\obj\Debug\net5.0\ref\test.dll
 C:\Users\Mimsy\Desktop\test\obj\Debug\net5.0\test.pdb
 C:\Users\Mimsy\Desktop\test\obj\Debug\net5.0\test.genruntimeconfig.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.csproj.AssemblyReference.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.AssemblyInfoInputs.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.AssemblyInfo.cs
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.csproj.CoreCompileInputs.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.dll
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\ref\test.dll
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net5.0\test.pdb

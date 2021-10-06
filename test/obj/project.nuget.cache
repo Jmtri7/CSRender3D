@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tRUxY599Ilc/VvU3f0u8v9Zi8Dr6M/YdZ/vIuehdzVVwEwUx2ciSeO9/tQ2qX6+F1e/nCVUGdBfi06Y5rPlIHA==",
+  "dgSpecHash": "ZTVyAtkpKzB+umuqKaYIvFImLJs/Ob0y1UKjjOC4suGE8E65PSyyoQ1b5foYHqdf33LDDGuMnKrtcRzxyVYSPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mimsy\\Desktop\\test\\test.csproj",
+  "projectFilePath": "C:\\Users\\Mimsy\\Documents\\GitHub\\CSRender3D\\test\\test.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

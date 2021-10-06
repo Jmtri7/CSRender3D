@@ -1,0 +1,10 @@
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.csproj.AssemblyReference.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.AssemblyInfoInputs.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.AssemblyInfo.cs
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.csproj.CoreCompileInputs.cache
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\bin\Debug\net4.7.2\test.exe.config
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\bin\Debug\net4.7.2\test.exe
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\bin\Debug\net4.7.2\test.pdb
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.exe
+C:\Users\Mimsy\Documents\GitHub\CSRender3D\test\obj\Debug\net4.7.2\test.pdb

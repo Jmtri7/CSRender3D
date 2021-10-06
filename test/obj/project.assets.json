@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0-windows7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\Mimsy\\.nuget\\packages\\": {}
@@ -13,24 +13,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mimsy\\desktop\\test\\test.csproj",
+      "projectUniqueName": "C:\\Users\\Mimsy\\Documents\\GitHub\\CSRender3D\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "C:\\Users\\Mimsy\\desktop\\test\\test.csproj",
+      "projectPath": "C:\\Users\\Mimsy\\Documents\\GitHub\\CSRender3D\\test\\test.csproj",
       "packagesPath": "C:\\Users\\Mimsy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mimsy\\desktop\\test\\obj\\",
+      "outputPath": "C:\\Users\\Mimsy\\Documents\\GitHub\\CSRender3D\\test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mimsy\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net5.0-windows"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
           "projectReferences": {}
         }
       },
@@ -41,8 +41,8 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
         "imports": [
           "net461",
           "net462",
@@ -56,6 +56,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
