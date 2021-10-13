@@ -56,6 +56,17 @@ class Vector {
         return Vector.Polar(this.GetRho(), this.GetTheta() + dTheta, this.GetPhi() + dPhi);
     }
 
+    public double Dot(Vector that) {
+        return this.x * that.x + this.y * that.y + this.z * that.z;
+    }
+
+    public Vector Cross(Vector that) {
+        double x = this.y * that.z - this.z * that.y;
+        double y = this.z * that.x - this.x * that.z;
+        double z = this.x * that.y - this.y * that.x;
+        return new Vector(x, y, z);
+    }
+
     public void PrintCartesian() {
         Console.WriteLine(String.Format("X: {0}, Y: {1}, Z: {2}", this.x, this.y, this.z));
     }
