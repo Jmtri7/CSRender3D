@@ -5,28 +5,58 @@ class Camera {
     public Vector direction;
     public Bitmap bitmap;
 
-    public Camera(Vector position, Vector direction) {
+    public Camera(Vector position, Vector direction, int resX, int resY) {
         this.position = position;
         this.direction = direction;
-        this.bitmap = new Bitmap(200, 200);
+        this.bitmap = new Bitmap(resX, resY);
     }
 
-    public void CastRays(Triangle triangle) {
-        double FOV = 90;
-        double dTheta = - FOV / 2;
+    public void RayCast(Triangle[] triangles) {
+        Vector normal1 = this.direction.Rotate(90, 0).Scale(0.005 / this.direction.GetRho());
+        Vector normal2 = this.direction.Rotate(0, 90).Scale(0.005 / this.direction.GetRho());
+
+        //double FOV = 90;
+        //double dTheta = - FOV / 2;
         for(int y = 0; y < bitmap.Height; y++) {
-            double dPhi = - FOV / 2;
+            //double dPhi = - FOV / 2;
             for(int x = 0; x < bitmap.Width; x++) {
-                Vector direction = this.position.Add(this.direction.Rotate(dTheta, dPhi));
-                Vector intersect = this.RayCast(direction, triangle);
-                if(intersect != null) this.bitmap.SetPixel(x, y, triangle.color);
-                dPhi += FOV / bitmap.Width;
+                
+                Vector direction = this.direction.Add(normal1.Scale(y - bitmap.Height / 2)).Add(normal2.Scale(x - bitmap.Width / 2));
+                //Vector direction = this.position.Add(this.direction.Rotate(dTheta, dPhi));
+                //Vector direction = this.direction.Rotate(dTheta, dPhi);
+
+                Triangle triangle = null;
+                Vector intersect1 = null;
+                for(int i = 0; i < triangles.Length; i++) {
+                    Vector intersect2 = this.CastRay(direction, triangles[i]);
+
+                    if(intersect2 != null) {
+                        if(intersect1 == null) {
+                            triangle = triangles[i];
+                            intersect1 = intersect2;
+                        }
+                        else {
+                            double d1 = intersect1.Subtract(this.position).GetRho();
+                            double d2 = intersect2.Subtract(this.position).GetRho();
+                            if(d2 < d1) {
+                                triangle = triangles[i];
+                                intersect1 = intersect2;
+                            }
+                        }
+                    }
+                    
+                    if(triangle != null) this.bitmap.SetPixel(x, y, triangle.color);
+                    else this.bitmap.SetPixel(x, y, Color.Black);
+                }
+                
+
+                //dPhi += FOV / bitmap.Width;
             }
-            dTheta += FOV / bitmap.Height;
-        }      
+            //dTheta += FOV / bitmap.Height;
+        }
     }
 
-    public Vector RayCast(Vector direction, Triangle triangle) {
+    public Vector CastRay(Vector direction, Triangle triangle) {
         Vector v1 = triangle.vectors[1].Subtract(triangle.vectors[0]);
         Vector v2 = triangle.vectors[2].Subtract(triangle.vectors[0]);
         Vector n = v1.Cross(v2);
