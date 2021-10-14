@@ -1,27 +1,29 @@
+using System.Drawing;
+
 class Camera {
     public Vector position;
     public Vector direction;
-    public Vector[,] pixels;
+    public Bitmap bitmap;
 
     public Camera(Vector position, Vector direction) {
         this.position = position;
         this.direction = direction;
-        this.pixels = new Vector[100, 100];
+        this.bitmap = new Bitmap(200, 200);
     }
 
-    public Vector[,] CastRays(Triangle triangle) {
+    public void CastRays(Triangle triangle) {
         double FOV = 90;
         double dTheta = - FOV / 2;
-        for(int y = 0; y < pixels.GetLength(1); y++) {
+        for(int y = 0; y < bitmap.Height; y++) {
             double dPhi = - FOV / 2;
-            for(int x = 0; x < pixels.GetLength(0); x++) {
+            for(int x = 0; x < bitmap.Width; x++) {
                 Vector direction = this.position.Add(this.direction.Rotate(dTheta, dPhi));
-                this.pixels[x, y] = this.RayCast(direction, triangle);
-                dPhi += FOV / pixels.GetLength(1);
+                Vector intersect = this.RayCast(direction, triangle);
+                if(intersect != null) this.bitmap.SetPixel(x, y, triangle.color);
+                dPhi += FOV / bitmap.Width;
             }
-            dTheta += FOV / pixels.GetLength(0);
+            dTheta += FOV / bitmap.Height;
         }      
-        return this.pixels;
     }
 
     public Vector RayCast(Vector direction, Triangle triangle) {

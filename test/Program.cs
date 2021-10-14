@@ -49,14 +49,6 @@ namespace test {
             pea.Graphics.DrawRectangle(pen, x, y, width, height);
         }
 
-        public void DrawPixels(PaintEventArgs pea, Vector[,] pixels) {
-            var pixelWidth = (this.width / pixels.GetLength(0));
-            var pixelHeight = (this.height / pixels.GetLength(1));
-            for(int y = 0; y < pixels.GetLength(1); y++)
-                for(int x = 0; x < pixels.GetLength(0); x++) 
-                    if(pixels[x, y] != null) this.DrawRectangle(pea, x * pixelWidth, y * pixelHeight, pixelWidth, pixelHeight);
-        }
-
         public void DrawCamera(PaintEventArgs pea) {
             this.DrawPoint(pea, this.camera.position);
             this.DrawLine(pea, this.camera.position, this.camera.position.Add(this.camera.direction));
@@ -66,15 +58,13 @@ namespace test {
             pea.Graphics.Clear(Color.White);
 
             Vector[] vectors = {new Vector(50, 80, 0), new Vector(80, 50, 0), new Vector(80, 80, 30)};
-            Triangle triangle = new Triangle(vectors);
+            Triangle triangle = new Triangle(vectors, Color.Red);
 
             //this.DrawCamera(pea);
             //this.DrawTriangle(pea, triangle);
 
-            Vector[,] pixels = this.camera.CastRays(triangle);
-            this.DrawPixels(pea, pixels);
-
-            //this.DrawPixels(pea, this.camera.pixels);
+            this.camera.CastRays(triangle);
+            pea.Graphics.DrawImage(this.camera.bitmap, 0, 0, this.width, this.height);
         }
     } 
 }

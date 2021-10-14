@@ -1,10 +1,13 @@
 using System;
+using System.Drawing;
 
 class Triangle {
     public Vector[] vectors;
+    public Color color;
 
-    public Triangle(Vector[] vectors) {
+    public Triangle(Vector[] vectors, Color color) {
         this.vectors = vectors;
+        this.color = color;
     }
 
     public void PrintCartesian() {
